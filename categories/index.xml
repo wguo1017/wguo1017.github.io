@@ -5,13 +5,13 @@
     
     
     
-    <link>wguo1017.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on 狐柒斋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 wguo.</copyright>
     
-	<atom:link href="wguo1017.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
