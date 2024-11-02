@@ -253,7 +253,7 @@ a.read-more:active {
     opacity: 0; } }
 
 .menu {
-  --color: rgba(0, 0, 0, .12);
+  --color: rgba(0, 0, 0, 0.12);
   --shadow: 0 8px 20px var(--color);
   border-right: 1px solid;
   margin-right: 18px;
