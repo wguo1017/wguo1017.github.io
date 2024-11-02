@@ -1,8 +1,12 @@
 
 .post-title{font-size: 1.375rem}
-.post-content{margin-top: 10px;}
+.post-content{
+	margin-top: 10px;
+	margin-bottom: -40px;
+}
 .content {
 	margin-top: -1.5%;
+	margin-bottom: -1.5%;
 }
 
 body{
