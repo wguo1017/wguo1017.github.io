@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         R使用vecLib和OpenBLAS ::
@@ -11,13 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="在Mac OSX下，R可以轻松的调用Apple的vecLib或者openBLAS对矩阵运算进行提速。vecLib的调用非常简单，但是CRAN上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行：
-cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 而让R用上openBLAS最简单的方法是从Homebrew安装（如果电脑上没有R）：
-brew tap homebrew/science brew install r --with-openblas 或是从CRAN上安装R，再link到openBLAS:
-brew tap homebrew/science brew install openblas cd /Library/Frameworks/R.framework/Resources/lib ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib 如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令：
-cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRblas.dylib 下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆: 默认BLAS:
-&amp;gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 52.128 0.241 52.570 ```html Apple的vecLib: ```html &amp;gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 5.050 0.117 1.660 openBLAS:
-&amp;gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 3.346 0.265 1.617 在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。
+  content=" bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 在Mac OSX下，R可以轻松的调用Apple的vecLib或者openBLAS对矩阵运算进行提速。vecLib的调用非常简单，但是CRAN上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行： bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 而让R用上openBLAS最简单的方法是从Homebrew安装（如果电脑上没有R）： bash brew tap homebrew/science brew install r --with-openblas 或是从CRAN上安装R，再link到openBLAS: bash brew tap homebrew/science brew install openblas cd /Library/Frameworks/R.framework/Resources/lib ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib 如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令： bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRblas.dylib 下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆: 默认BLAS: r &amp;gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 52.128 0.241 52.570 Apple的vecLib: r &amp;gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 5.050 0.117 1.660 openBLAS: r &amp;gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 3.346 0.265 1.617 在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。
 "
 />
 <meta
@@ -25,7 +19,7 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://wguo1017.github.io/2016/r%E4%BD%BF%E7%94%A8veclib%E5%92%8Copenblas/" />
+<link rel="canonical" href="http://localhost:1313/2016/r%E4%BD%BF%E7%94%A8veclib%E5%92%8Copenblas/" />
 
 
 
@@ -34,11 +28,11 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://wguo1017.github.io/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://wguo1017.github.io/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://wguo1017.github.io/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -52,26 +46,14 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="R使用vecLib和OpenBLAS">
-  <meta name="twitter:description" content="在Mac OSX下，R可以轻松的调用Apple的vecLib或者openBLAS对矩阵运算进行提速。vecLib的调用非常简单，但是CRAN上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行：
-cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 而让R用上openBLAS最简单的方法是从Homebrew安装（如果电脑上没有R）：
-brew tap homebrew/science brew install r --with-openblas 或是从CRAN上安装R，再link到openBLAS:
-brew tap homebrew/science brew install openblas cd /Library/Frameworks/R.framework/Resources/lib ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib 如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令：
-cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRblas.dylib 下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆: 默认BLAS:
-&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 52.128 0.241 52.570 ```html Apple的vecLib: ```html &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 5.050 0.117 1.660 openBLAS:
-&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 3.346 0.265 1.617 在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。">
+  <meta name="twitter:description" content=" bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 在Mac OSX下，R可以轻松的调用Apple的vecLib或者openBLAS对矩阵运算进行提速。vecLib的调用非常简单，但是CRAN上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行： bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 而让R用上openBLAS最简单的方法是从Homebrew安装（如果电脑上没有R）： bash brew tap homebrew/science brew install r --with-openblas 或是从CRAN上安装R，再link到openBLAS: bash brew tap homebrew/science brew install openblas cd /Library/Frameworks/R.framework/Resources/lib ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib 如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令： bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRblas.dylib 下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆: 默认BLAS: r &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 52.128 0.241 52.570 Apple的vecLib: r &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 5.050 0.117 1.660 openBLAS: r &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 3.346 0.265 1.617 在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。">
 
 
 
-<meta property="og:url" content="https://wguo1017.github.io/2016/r%E4%BD%BF%E7%94%A8veclib%E5%92%8Copenblas/">
+<meta property="og:url" content="http://localhost:1313/2016/r%E4%BD%BF%E7%94%A8veclib%E5%92%8Copenblas/">
   <meta property="og:site_name" content="柒">
   <meta property="og:title" content="R使用vecLib和OpenBLAS">
-  <meta property="og:description" content="在Mac OSX下，R可以轻松的调用Apple的vecLib或者openBLAS对矩阵运算进行提速。vecLib的调用非常简单，但是CRAN上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行：
-cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 而让R用上openBLAS最简单的方法是从Homebrew安装（如果电脑上没有R）：
-brew tap homebrew/science brew install r --with-openblas 或是从CRAN上安装R，再link到openBLAS:
-brew tap homebrew/science brew install openblas cd /Library/Frameworks/R.framework/Resources/lib ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib 如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令：
-cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRblas.dylib 下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆: 默认BLAS:
-&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 52.128 0.241 52.570 ```html Apple的vecLib: ```html &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 5.050 0.117 1.660 openBLAS:
-&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 3.346 0.265 1.617 在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。">
+  <meta property="og:description" content=" bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 在Mac OSX下，R可以轻松的调用Apple的vecLib或者openBLAS对矩阵运算进行提速。vecLib的调用非常简单，但是CRAN上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行： bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib 而让R用上openBLAS最简单的方法是从Homebrew安装（如果电脑上没有R）： bash brew tap homebrew/science brew install r --with-openblas 或是从CRAN上安装R，再link到openBLAS: bash brew tap homebrew/science brew install openblas cd /Library/Frameworks/R.framework/Resources/lib ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib 如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令： bash cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRblas.dylib 下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆: 默认BLAS: r &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 52.128 0.241 52.570 Apple的vecLib: r &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 5.050 0.117 1.660 openBLAS: r &gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3))) user system elapsed 3.346 0.265 1.617 在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -170,7 +152,7 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
       <div class="content">
         
   <div class="post">
-    <h2 class="post-title"><a href="https://wguo1017.github.io/2016/r%E4%BD%BF%E7%94%A8veclib%E5%92%8Copenblas/">R使用vecLib和OpenBLAS</a></h2>
+    <h2 class="post-title"><a href="http://localhost:1313/2016/r%E4%BD%BF%E7%94%A8veclib%E5%92%8Copenblas/">R使用vecLib和OpenBLAS</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -180,7 +162,7 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
       
         <span class="post-tags" style="float:right">
           
-            #<a href="https://wguo1017.github.io/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+            #<a href="http://localhost:1313/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
           
         </span>
       
@@ -188,36 +170,153 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
 
 
     <div class="post-content">
-      <p>在Mac OSX下，R可以轻松的调用Apple的<a href="https://developer.apple.com/reference/accelerate/1660528-veclib">vecLib</a>或者<a href="http://www.openblas.net">openBLAS</a>对矩阵运算进行提速。vecLib的调用非常简单，<del>但是<a href="https://cran.r-project.org/bin/macosx/RMacOSX-FAQ.html#Which-BLAS-is-used-and-how-can-it-be-changed_003f">CRAN</a>上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。</del> 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>cd /Library/Frameworks/R.framework/Resources/lib
-</span></span><span style="display:flex;"><span>ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib
-</span></span></code></pre></div><p>而让R用上openBLAS最简单的方法是从<a href="http://brew.sh">Homebrew</a>安装（如果电脑上没有R）：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>brew tap homebrew/science
-</span></span><span style="display:flex;"><span>brew install r --with-openblas
-</span></span></code></pre></div><p>或是从CRAN上安装R，再link到openBLAS:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>brew tap homebrew/science
-</span></span><span style="display:flex;"><span>brew install openblas
-</span></span><span style="display:flex;"><span>cd /Library/Frameworks/R.framework/Resources/lib
-</span></span><span style="display:flex;"><span>ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib
-</span></span></code></pre></div><p>如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>cd /Library/Frameworks/R.framework/Resources/lib
-</span></span><span style="display:flex;"><span>ln -sf libRblas.0.dylib libRblas.dylib
-</span></span></code></pre></div><p>下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆:
-默认BLAS:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3)))
-</span></span><span style="display:flex;"><span>   user  system elapsed 
-</span></span><span style="display:flex;"><span> 52.128   0.241  52.570 
-</span></span><span style="display:flex;"><span>```html
-</span></span><span style="display:flex;"><span>Apple的vecLib:
-</span></span><span style="display:flex;"><span>```html
-</span></span><span style="display:flex;"><span>&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3)))
-</span></span><span style="display:flex;"><span>   user  system elapsed 
-</span></span><span style="display:flex;"><span>  5.050   0.117   1.660 
-</span></span></code></pre></div><p>openBLAS:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3)))
-</span></span><span style="display:flex;"><span>   user  system elapsed 
-</span></span><span style="display:flex;"><span>  3.346   0.265   1.617 
-</span></span></code></pre></div><p>在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。</p>
+      <div class="collapsable-code">
+    <input id="176395428" type="checkbox"  />
+    <label for="176395428">
+      <span class="collapsable-code__language">bash</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-bash" ><code>
+cd /Library/Frameworks/R.framework/Resources/lib
+ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib
+</code></pre>
+  </div>
+
+
+<p>在Mac OSX下，R可以轻松的调用Apple的<a href="https://developer.apple.com/reference/accelerate/1660528-veclib">vecLib</a>或者<a href="http://www.openblas.net">openBLAS</a>对矩阵运算进行提速。vecLib的调用非常简单，<del>但是<a href="https://cran.r-project.org/bin/macosx/RMacOSX-FAQ.html#Which-BLAS-is-used-and-how-can-it-be-changed_003f">CRAN</a>上给出的命令行是针对旧版的R，新的版本已不再适用(R 3.3.2)。</del> 如果安装的R是从CRAN上下载的编译好的版本，那么只需要执行：
+
+
+
+  <div class="collapsable-code">
+    <input id="736245918" type="checkbox"  />
+    <label for="736245918">
+      <span class="collapsable-code__language">bash</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-bash" ><code>
+cd /Library/Frameworks/R.framework/Resources/lib
+ln -sf /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Versions/Current/libBLAS.dylib libRblas.dylib
+</code></pre>
+  </div>
+
+
+而让R用上openBLAS最简单的方法是从<a href="http://brew.sh">Homebrew</a>安装（如果电脑上没有R）：
+
+
+
+  <div class="collapsable-code">
+    <input id="134925867" type="checkbox"  />
+    <label for="134925867">
+      <span class="collapsable-code__language">bash</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-bash" ><code>
+brew tap homebrew/science
+brew install r --with-openblas
+</code></pre>
+  </div>
+
+
+或是从CRAN上安装R，再link到openBLAS:
+
+
+
+  <div class="collapsable-code">
+    <input id="432589617" type="checkbox"  />
+    <label for="432589617">
+      <span class="collapsable-code__language">bash</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-bash" ><code>
+brew tap homebrew/science
+brew install openblas
+cd /Library/Frameworks/R.framework/Resources/lib
+ln -sf /usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas.dylib libRblas.dylib
+</code></pre>
+  </div>
+
+
+如果出现运算结果不精确、不稳定情况而想要换回R默认的设置，执行以下命令：
+
+
+
+  <div class="collapsable-code">
+    <input id="257938461" type="checkbox"  />
+    <label for="257938461">
+      <span class="collapsable-code__language">bash</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-bash" ><code>
+cd /Library/Frameworks/R.framework/Resources/lib
+ln -sf libRblas.0.dylib libRblas.dylib
+</code></pre>
+  </div>
+
+
+下面做一个简单的小例子以比较三者的速度。求解一个3000*3000随机矩阵的逆:
+默认BLAS:
+
+
+
+  <div class="collapsable-code">
+    <input id="692784315" type="checkbox"  />
+    <label for="692784315">
+      <span class="collapsable-code__language">r</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-r" ><code>
+&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3)))
+   user  system elapsed 
+ 52.128   0.241  52.570 
+</code></pre>
+  </div>
+
+
+Apple的vecLib:
+
+
+
+  <div class="collapsable-code">
+    <input id="271548369" type="checkbox"  />
+    <label for="271548369">
+      <span class="collapsable-code__language">r</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-r" ><code>
+&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3)))
+   user  system elapsed 
+  5.050   0.117   1.660 
+</code></pre>
+  </div>
+
+
+openBLAS:
+
+
+
+  <div class="collapsable-code">
+    <input id="532486197" type="checkbox"  />
+    <label for="532486197">
+      <span class="collapsable-code__language">r</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-r" ><code>
+&gt; system.time(solve(matrix(rnorm(3e3^2), nrow=3e3)))
+   user  system elapsed 
+  3.346   0.265   1.617 
+</code></pre>
+  </div>
+
+
+在这个小例子里，vecLib和openBLAS的速度几乎没有区别，都远远快于默认R的配置。如果怕麻烦，懒得下载编译，Mac OSX内置的vecLib就是很不错的选择。</p>
     </div>
 
     
@@ -229,7 +328,7 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="https://wguo1017.github.io/2017/02-lonely-boy/">
+              <a href="http://localhost:1313/2017/02-lonely-boy/">
                 <span class="button__icon">←</span>
                 <span class="button__text">02-Lonely Boy</span>
               </a>
@@ -237,7 +336,7 @@ cd /Library/Frameworks/R.framework/Resources/lib ln -sf libRblas.0.dylib libRbla
           
           
             <span class="button next">
-              <a href="https://wguo1017.github.io/2016/01-the-house-that-built-me/">
+              <a href="http://localhost:1313/2016/01-the-house-that-built-me/">
                 <span class="button__text">01-The House That Built Me</span>
                 <span class="button__icon">→</span>
               </a>
